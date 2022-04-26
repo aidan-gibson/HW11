@@ -7,18 +7,14 @@
 
 #pragma once
 
-class ClimbChromosome : public Chromosome{
+class ClimbChromosome : public Chromosome {
 
-public:
+ public:
 
-    //ClimbChromosome(const Cities *cities_ptr) : Chromosome(cities_ptr) {}
+  explicit ClimbChromosome(const Cities *cities);
 
-    ClimbChromosome(const Cities *cities); //NOLINT
+  void mutate() override;
 
-
-    void mutate() override;
-
-    //ClimbChromosome* clone() const override {return new ClimbChromosome(cities_ptr_); }
-    ClimbChromosome* clone() const override {return new ClimbChromosome(*this); } //NOLINT
+  [[nodiscard]] ClimbChromosome *clone() const override { return new ClimbChromosome(*this); }
 
 };
