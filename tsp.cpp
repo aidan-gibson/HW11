@@ -5,7 +5,7 @@
  */
 
 #include "cities.h"
-#include "deme.h"
+#include "tournament_deme.h"
 
 #include <algorithm>
 #include <cassert>

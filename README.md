@@ -17,7 +17,7 @@
 - [x] experiment w mutrate
 - [x] save results into `local.tsv` to obtain baseline
 
-Copied `local.tsv` from `cmake-build-debug/` to root.
+- [x] Copied `local.tsv` from `cmake-build-debug/` to root.
 
 
 
@@ -27,23 +27,25 @@ Copied `local.tsv` from `cmake-build-debug/` to root.
 
 inherits from deme class
 
-
-
 * Tournament Selection: pits candidate parents against each other to det which parent gets to recombine
 
   * Select `P` parents at random (`P` is some const pwr of 2 that u choose, no bigger than pop size)
 
   * take first pair in the set of `P` parents and discard the parent w the lower fitness of the two
   * do same for next pair, etc
-  * should have `P/2` resulting parents (assert this?)
+  * should have `P/2` resulting parents
+  * repeat until 1 parent
+* [x] modify `select_parent()` to do the above
+* [x] modify `tsp.cc` use TournamentDeme class instead of Deme
+* [ ] experiment w size to get good results
+* [x] test if `Chromosome` or `ClimbChromosome`gives better results
+* [ ] `./HW11 challenge.tsv 100 0.2` ClimbChromosome (slightly) better
+  * [ ] ClimbChromosome: 18287.2, 17549.6, 18810.3
+  * [ ] Chromosome: 18393.4, 18463.1, 18264.8
+* [ ] save results to "tournament.tsv"
+  * [ ] `./HW11 challenge.tsv 1000 0.2 > tournament.tsv`
 
-* modify `tsp.cc` use TournamentDeme class instead of Deme
-
-* experiment w size to get good results
-
-* save results to "tournament.tsv"
-
-
+* [ ] copy `tournament.tsv` to root
 
 ## report results + extra credit
 
