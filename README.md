@@ -62,6 +62,20 @@ Combined graph from “baseline-ga.tsv”, “local.tsv”, and “tournament.ts
 
 Save the graph into “comparison.gif” 
 
+`gnuplot`
+
+`plot "baseline-ga.tsv" w lp, "local.tsv" w lp, "tournament.tsv" w lp`
+
+`set term gif`
+
+`set out "comparison.gif"`
+
+`replot`
+
+
+
+![comparison.gif]
+
 ## Extra Credit
 
 submit separately (make new folder)
