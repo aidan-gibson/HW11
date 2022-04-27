@@ -9,6 +9,6 @@ configure_file(challenge.tsv ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
 configure_file(linear.tsv ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
 
 
-add_executable(HW11 tsp.cpp chromosome.cpp deme.cpp cities.cpp climb_chromosome.cpp climb_chromosome.h tournament_deme.cpp tournament_deme.h)
+add_executable(HW11 tsp.cpp chromosome.cpp deme.cpp cities.cpp climb_chromosome.cpp climb_chromosome.h tournament_deme.cpp tournament_deme.h AltChromosome.cpp AltChromosome.h)
 
 #add_executable(test test.cpp)

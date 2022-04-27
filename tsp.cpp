@@ -5,7 +5,7 @@
  */
 
 #include "cities.h"
-#include "tournament_deme.h"
+#include "deme.h"
 
 #include <algorithm>
 #include <cassert>
@@ -113,34 +113,65 @@ ga_search(const Cities& cities,
 
 
 //////////////////////////////////////////////////////////////////////////////
-int main(int argc, char** argv)
-{
-    if (argc != 4) {
-        std::cerr << "Required arguments: filename for cities, population size, and mutation rate\n";
-        return -1;
-    }
+//int main(int argc, char** argv)
+//{
+//    if (argc != 4) {
+//        std::cerr << "Required arguments: filename for cities, population size, and mutation rate\n";
+//        return -1;
+//    }
+//
+//    const auto cities = Cities(argv[1]);
+//    const auto pop_size = atoi(argv[2]);
+//    const auto mut_rate = atof(argv[3]);
+//    constexpr unsigned NUM_ITER = 100000;
+//    assert(cities.size() > 0 && "Did you actually read the input file successfully?");
+//
+//
+////  const auto best_ordering = exhaustive_search(cities);
+////const auto best_ordering = randomized_search(cities, NUM_ITER);
+//    const auto best_ordering = ga_search(cities, NUM_ITER, pop_size, mut_rate);
+//
+//    auto out = std::ofstream("shortest.tsv");
+//    if (!out.is_open()) {
+//        std::cerr << "Can't open output file to record shortest path!\n";
+//        return -2;
+//    }
+//
+//    out << cities.reorder(best_ordering);
+//
+//    return 0;
+//}
 
-    const auto cities = Cities(argv[1]);
-    const auto pop_size = atoi(argv[2]);
-    const auto mut_rate = atof(argv[3]);
-    constexpr unsigned NUM_ITER = 100000;
-    assert(cities.size() > 0 && "Did you actually read the input file successfully?");
+int main()
+{
+
+
+  const auto cities = Cities("challenge.tsv");
+  const auto pop_size = 100;
+  const auto mut_rate = 0.2;
+  constexpr unsigned NUM_ITER = 100000;
+  assert(cities.size() > 0 && "Did you actually read the input file successfully?");
 
 
 //  const auto best_ordering = exhaustive_search(cities);
 //const auto best_ordering = randomized_search(cities, NUM_ITER);
-    const auto best_ordering = ga_search(cities, NUM_ITER, pop_size, mut_rate);
+  const auto best_ordering = ga_search(cities, NUM_ITER, pop_size, mut_rate);
 
-    auto out = std::ofstream("shortest.tsv");
-    if (!out.is_open()) {
-        std::cerr << "Can't open output file to record shortest path!\n";
-        return -2;
-    }
+  auto out = std::ofstream("shortest.tsv");
+  if (!out.is_open()) {
+    std::cerr << "Can't open output file to record shortest path!\n";
+    return -2;
+  }
 
-    out << cities.reorder(best_ordering);
+  out << cities.reorder(best_ordering);
 
-    return 0;
+  return 0;
 }
+
+
+
+
+
 //int main()
 //{
 //

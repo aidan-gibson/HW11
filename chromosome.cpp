@@ -11,8 +11,8 @@
 // Generate a completely random permutation from a list of cities
 Chromosome::Chromosome(const Cities* cities_ptr)
     : cities_ptr_(cities_ptr),
-      order_(random_permutation(cities_ptr->size())),
-      generator_(rand())
+      generator_(rand()),
+      order_(random_permutation(cities_ptr->size()))
 {
   assert(is_valid());
 }
@@ -37,7 +37,7 @@ Chromosome::mutate()
 //////////////////////////////////////////////////////////////////////////////
 // Return a pair of offsprings by recombining with another chromosome
 // Note: this method allocates memory for the new offsprings
-std::pair<Chromosome*, Chromosome*>
+std::pair<Chromosome *, Chromosome *>
 Chromosome::recombine(const Chromosome* other)
 {
   assert(is_valid());

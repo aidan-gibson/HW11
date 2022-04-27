@@ -14,13 +14,7 @@
 #include <random>
 
 class Chromosome {
- protected:
-  // Disable public copying of objects for polymorphism:
-  Chromosome(const Chromosome&) = default;
-  Chromosome(Chromosome&&) = default;
-  Chromosome& operator=(const Chromosome&) = default;
-  Chromosome& operator=(Chromosome&&) = default;
-
+  friend class AltChromosome;
  public:
   // Creation method for new Chromsomoe. Saves a copy of the cities and
   // generates a completely random permutation from a list of cities.
@@ -43,7 +37,7 @@ class Chromosome {
   // Return a pair of offsprings by recombining with another chromosome
   // Note: this method allocates memory for the new offsprings
   // It is the caller's responsibility to free this memory.
-  virtual std::pair<Chromosome*, Chromosome*>
+  virtual std::pair<Chromosome *, Chromosome *>
   recombine(const Chromosome* other);
 
   // Compute total distance to traverse cities in ordering:
@@ -62,7 +56,12 @@ class Chromosome {
     return order_;
   }
 
+
+
  protected:
+  // A chromsome is valid if it has no repeated values in its permutation,
+  // as well as no indices above the range (length) of the chromosome.
+  bool is_valid() const;
   // For an ordered set of parents, return a child using the ordered crossover.
   // The child will have the same values as p1 in the range [begin,end),
   // and all the other values in the same order as in p2.
@@ -72,17 +71,20 @@ class Chromosome {
                          unsigned begin,
                          unsigned end) const;
 
-  // A chromsome is valid if it has no repeated values in its permutation,
-  // as well as no indices above the range (length) of the chromosome.
-  bool is_valid() const;
-
   // Find whether a certain value appears in a given range of the chromosome.
   // Returns true if value is in order_ within the specified the range specified
   // [begin, end) and false otherwise.
   bool is_in_range(unsigned value, unsigned begin, unsigned end) const;
 
   const Cities* cities_ptr_; // Keep ptr to cities, no need for full copy
-  Cities::permutation_t order_;  // The actual permutation of this chromosome
+  // The actual permutation of this chromosome
 
   std::default_random_engine generator_; // A random number generator for the various methods
+  // Disable public copying of objects for polymorphism:
+  Chromosome(const Chromosome&) = default;
+  Chromosome(Chromosome&&) = default;
+  Chromosome& operator=(const Chromosome&) = default;
+  Chromosome& operator=(Chromosome&&) = default;
+
+  Cities::permutation_t order_;
 };

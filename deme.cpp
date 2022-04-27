@@ -3,7 +3,7 @@
  * travelling-salesperson problem.  A deme is a population of individuals.
  */
 
-#include "climb_chromosome.h"
+#include "AltChromosome.h"
 #include "deme.h"
 #include <chrono> //for linux compat
 #include <cassert> //for linux compat
@@ -15,7 +15,7 @@ using namespace std;
 Deme::Deme(const Cities *cities_ptr, unsigned pop_size, double mut_rate)
     : pop_(pop_size), mut_rate_(mut_rate), generator_(rand()) {
   for (auto &chr : pop_) {
-    chr = new ClimbChromosome(cities_ptr); //keep this fs, yeet all other climbchromosome
+    chr = new AltChromosome(cities_ptr); //keep this fs, yeet all other climbchromosome
   }
 }
 

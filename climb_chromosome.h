@@ -7,7 +7,7 @@
 
 #pragma once
 
-class ClimbChromosome : public Chromosome {
+class ClimbChromosome : virtual public Chromosome {
 
  public:
 
