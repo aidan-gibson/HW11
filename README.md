@@ -81,3 +81,7 @@ Save the graph into “comparison.gif”
 Alternating Edges Crossover (AEX)
 
 ![](comparison_aex.gif)
+
+`valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out-aex.txt ./HW11`
+
+`valgrind-out-aex.txt` attached.

@@ -1,0 +1,103 @@
+==22397== Memcheck, a memory error detector
+==22397== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==22397== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==22397== Command: ./HW11
+==22397== Parent PID: 19692
+==22397== 
+--22397-- 
+--22397-- Valgrind options:
+--22397--    --leak-check=full
+--22397--    --show-leak-kinds=all
+--22397--    --track-origins=yes
+--22397--    --verbose
+--22397--    --log-file=valgrind-out-aex.txt
+--22397-- Contents of /proc/version:
+--22397--   Linux version 5.4.0-109-generic (buildd@bos02-arm64-052) (gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1)) #123-Ubuntu SMP Fri Apr 8 09:12:14 UTC 2022
+--22397-- 
+--22397-- Arch and hwcaps: ARM64, LittleEndian, baseline
+--22397-- Page sizes: currently 4096, max supported 65536
+--22397-- Valgrind library directory: /usr/lib/aarch64-linux-gnu/valgrind
+--22397-- Reading syms from /home/parallels/CLionProjects/HW11/cmake-build-debug/HW11
+--22397-- Reading syms from /usr/lib/aarch64-linux-gnu/ld-2.31.so
+--22397--   Considering /usr/lib/aarch64-linux-gnu/ld-2.31.so ..
+--22397--   .. CRC mismatch (computed d22eb360 wanted b1809809)
+--22397--   Considering /lib/aarch64-linux-gnu/ld-2.31.so ..
+--22397--   .. CRC mismatch (computed d22eb360 wanted b1809809)
+--22397--   Considering /usr/lib/debug/lib/aarch64-linux-gnu/ld-2.31.so ..
+--22397--   .. CRC is valid
+--22397-- Reading syms from /usr/lib/aarch64-linux-gnu/valgrind/memcheck-arm64-linux
+--22397--    object doesn't have a symbol table
+--22397--    object doesn't have a dynamic symbol table
+--22397-- Scheduler: using generic scheduler lock implementation.
+--22397-- Reading suppressions file: /usr/lib/aarch64-linux-gnu/valgrind/default.supp
+==22397== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-22397-by-parallels-on-???
+==22397== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-22397-by-parallels-on-???
+==22397== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-22397-by-parallels-on-???
+==22397== 
+==22397== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==22397== don't want to do, unless you know exactly what you're doing,
+==22397== or are doing some strange experiment):
+==22397==   /usr/lib/aarch64-linux-gnu/valgrind/../../bin/vgdb --pid=22397 ...command...
+==22397== 
+==22397== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==22397==   /path/to/gdb ./HW11
+==22397== and then give GDB the following command
+==22397==   target remote | /usr/lib/aarch64-linux-gnu/valgrind/../../bin/vgdb --pid=22397
+==22397== --pid is optional if only one valgrind process is running
+==22397== 
+--22397-- REDIR: 0x4019300 (ld-linux-aarch64.so.1:strlen) redirected to 0x580c5de8 (???)
+--22397-- REDIR: 0x4018340 (ld-linux-aarch64.so.1:strcmp) redirected to 0x580c5e3c (???)
+--22397-- REDIR: 0x4018260 (ld-linux-aarch64.so.1:index) redirected to 0x580c5e10 (???)
+--22397-- Reading syms from /usr/lib/aarch64-linux-gnu/valgrind/vgpreload_core-arm64-linux.so
+--22397--    object doesn't have a symbol table
+--22397-- Reading syms from /usr/lib/aarch64-linux-gnu/valgrind/vgpreload_memcheck-arm64-linux.so
+--22397--    object doesn't have a symbol table
+--22397-- Reading syms from /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.28
+--22397--    object doesn't have a symbol table
+--22397-- Reading syms from /usr/lib/aarch64-linux-gnu/libm-2.31.so
+--22397--   Considering /usr/lib/aarch64-linux-gnu/libm-2.31.so ..
+--22397--   .. CRC mismatch (computed 53e764dc wanted ec28756b)
+--22397--   Considering /lib/aarch64-linux-gnu/libm-2.31.so ..
+--22397--   .. CRC mismatch (computed 53e764dc wanted ec28756b)
+--22397--   Considering /usr/lib/debug/lib/aarch64-linux-gnu/libm-2.31.so ..
+--22397--   .. CRC is valid
+--22397-- Reading syms from /usr/lib/aarch64-linux-gnu/libgcc_s.so.1
+--22397--    object doesn't have a symbol table
+--22397-- Reading syms from /usr/lib/aarch64-linux-gnu/libc-2.31.so
+--22397--   Considering /usr/lib/aarch64-linux-gnu/libc-2.31.so ..
+--22397--   .. CRC mismatch (computed 67fe0029 wanted 7e0e6f00)
+--22397--   Considering /lib/aarch64-linux-gnu/libc-2.31.so ..
+--22397--   .. CRC mismatch (computed 67fe0029 wanted 7e0e6f00)
+--22397--   Considering /usr/lib/debug/lib/aarch64-linux-gnu/libc-2.31.so ..
+--22397--   .. CRC is valid
+--22397-- REDIR: 0x4ba8a30 (libc.so.6:memchr) redirected to 0x48346c8 (_vgnU_ifunc_wrapper)
+--22397-- REDIR: 0x4ba7858 (libc.so.6:strlen) redirected to 0x48346c8 (_vgnU_ifunc_wrapper)
+--22397-- REDIR: 0x4ba92d0 (libc.so.6:memcpy) redirected to 0x48346c8 (_vgnU_ifunc_wrapper)
+--22397-- REDIR: 0x4ba8c10 (libc.so.6:memmove) redirected to 0x48346c8 (_vgnU_ifunc_wrapper)
+--22397-- REDIR: 0x4ba7cc0 (libc.so.6:rindex) redirected to 0x484cc40 (rindex)
+--22397-- REDIR: 0x4ba3378 (libc.so.6:malloc) redirected to 0x4849d18 (malloc)
+--22397-- REDIR: 0x4ba8ce0 (libc.so.6:memset) redirected to 0x48346c8 (_vgnU_ifunc_wrapper)
+--22397-- REDIR: 0x4bafc80 (libc.so.6:__GI_memset) redirected to 0x4850c50 (memset)
+--22397-- REDIR: 0x4bb03c0 (libc.so.6:__GI_strlen) redirected to 0x484d268 (__GI_strlen)
+--22397-- REDIR: 0x4ba8a80 (libc.so.6:bcmp) redirected to 0x48504d8 (bcmp)
+--22397-- REDIR: 0x4ba7080 (libc.so.6:strcmp) redirected to 0x484e278 (strcmp)
+--22397-- REDIR: 0x4baecd0 (libc.so.6:__GI_memcpy) redirected to 0x484efb0 (__GI_memcpy)
+--22397-- REDIR: 0x4ba8688 (libc.so.6:strstr) redirected to 0x4851fb8 (strstr)
+--22397-- REDIR: 0x4916be0 (libstdc++.so.6:operator new[](unsigned long)) redirected to 0x484aa30 (operator new[](unsigned long))
+--22397-- REDIR: 0x4916b40 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x484a350 (operator new(unsigned long))
+--22397-- REDIR: 0x4914960 (libstdc++.so.6:operator delete(void*)) redirected to 0x484b3b0 (operator delete(void*))
+--22397-- REDIR: 0x4914990 (libstdc++.so.6:operator delete[](void*)) redirected to 0x484ba90 (operator delete[](void*))
+--22397-- REDIR: 0x4ba3970 (libc.so.6:free) redirected to 0x484aeb0 (free)
+--22397-- REDIR: 0x4baecc0 (libc.so.6:__GI_memmove) redirected to 0x4851058 (__GI_memmove)
+--22397-- REDIR: 0x4914970 (libstdc++.so.6:operator delete(void*, unsigned long)) redirected to 0x484b590 (operator delete(void*, unsigned long))
+--22397-- REDIR: 0x4ba8da0 (libc.so.6:mempcpy) redirected to 0x4851890 (mempcpy)
+--22397-- REDIR: 0x4baa9e0 (libc.so.6:strchrnul) redirected to 0x4851790 (strchrnul)
+--22397-- REDIR: 0x4bb01c0 (libc.so.6:__GI_memchr) redirected to 0x484e468 (__GI_memchr)
+==22397== 
+==22397== HEAP SUMMARY:
+==22397==     in use at exit: 0 bytes in 0 blocks
+==22397==   total heap usage: 607,277 allocs, 607,277 frees, 107,716,288 bytes allocated
+==22397== 
+==22397== All heap blocks were freed -- no leaks are possible
+==22397== 
+==22397== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

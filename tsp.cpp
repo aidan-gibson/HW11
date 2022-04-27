@@ -147,7 +147,7 @@ int main()
 
 
   const auto cities = Cities("challenge.tsv");
-  const auto pop_size = 500;
+  const auto pop_size = 1000;
   const auto mut_rate = 0.2;
   constexpr unsigned NUM_ITER = 100000;
   assert(cities.size() > 0 && "Did you actually read the input file successfully?");
