@@ -9,10 +9,10 @@
 
 #pragma once
 
-class TournamentDeme : public Deme{
+class TournamentDeme : public Deme {
  public:
 
   explicit TournamentDeme(const Cities *cities_ptr, unsigned pop_size, double mut_rate);
 
-  Chromosome * select_parent() override;
+  Chromosome *select_parent() override;
 };

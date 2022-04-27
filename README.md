@@ -23,7 +23,7 @@
 
 
 
-## Class TournamentDeme 
+## Class TournamentDeme
 
 inherits from deme class
 
@@ -37,22 +37,31 @@ inherits from deme class
   * repeat until 1 parent
 * [x] modify `select_parent()` to do the above
 * [x] modify `tsp.cc` use TournamentDeme class instead of Deme
-* [ ] experiment w size to get good results
+* [x] experiment w size to get good results
 * [x] test if `Chromosome` or `ClimbChromosome`gives better results
-* [ ] `./HW11 challenge.tsv 100 0.2` ClimbChromosome (slightly) better
-  * [ ] ClimbChromosome: 18287.2, 17549.6, 18810.3
-  * [ ] Chromosome: 18393.4, 18463.1, 18264.8
-* [ ] save results to "tournament.tsv"
+  * [x] `./HW11 challenge.tsv 100 0.2` ClimbChromosome (slightly) better
+    * [ ] ClimbChromosome: 18287.2, 17549.6, 18810.3
+    * [ ] Chromosome: 18393.4, 18463.1, 18264.8
+
+* [x] save results to "tournament.tsv"
   * [ ] `./HW11 challenge.tsv 1000 0.2 > tournament.tsv`
 
-* [ ] copy `tournament.tsv` to root
+* [x] copy `tournament.tsv` to root
 
-## report results + extra credit
+## Valgrind + Final Checks
 
 `valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./HW11 challenge.tsv 100 0.2`
 
-copy valgrind-out.txt to root
+- [x] copy valgrind-out.txt to root
 
-- [ ] Valgrind
-- [ ] look over obsidian checkoff list 
+- [x] look over obsidian checkoff list 
 
+## Reporting
+
+Combined graph from “baseline-ga.tsv”, “local.tsv”, and “tournament.tsv”. 
+
+Save the graph into “comparison.gif” 
+
+## Extra Credit
+
+submit separately (make new folder)
