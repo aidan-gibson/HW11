@@ -74,7 +74,7 @@ Save the graph into “comparison.gif”
 
 
 
-![comparison.gif]
+![comparison.gif](comparison.gif)
 
 ## Extra Credit
 
