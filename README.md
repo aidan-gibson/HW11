@@ -39,12 +39,12 @@ inherits from deme class
 * [x] modify `tsp.cc` use TournamentDeme class instead of Deme
 * [x] experiment w size to get good results
 * [x] test if `Chromosome` or `ClimbChromosome`gives better results
-  * [x] `./HW11 challenge.tsv 100 0.2` ClimbChromosome (slightly) better
-    * [ ] ClimbChromosome: 18287.2, 17549.6, 18810.3
-    * [ ] Chromosome: 18393.4, 18463.1, 18264.8
+  *  `./HW11 challenge.tsv 100 0.2` ClimbChromosome (slightly) better
+    *  ClimbChromosome: 18287.2, 17549.6, 18810.3
+    *  Chromosome: 18393.4, 18463.1, 18264.8
 
 * [x] save results to "tournament.tsv"
-  * [ ] `./HW11 challenge.tsv 1000 0.2 > tournament.tsv`
+  *  `./HW11 challenge.tsv 1000 0.2 > tournament.tsv`
 
 * [x] copy `tournament.tsv` to root
 
