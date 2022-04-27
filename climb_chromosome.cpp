@@ -1,6 +1,6 @@
 
 #include "climb_chromosome.h"
-
+#include <cassert> //for linux compat
 using namespace std;
 
 /*

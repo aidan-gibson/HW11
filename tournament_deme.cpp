@@ -3,7 +3,8 @@
 //
 
 #include "tournament_deme.h"
-
+#include <cassert> //for linux compat
+#include <chrono> //for linux compat
 using namespace std;
 
 TournamentDeme::TournamentDeme(const Cities *cities_ptr, unsigned int pop_size, double mut_rate) : Deme(cities_ptr,

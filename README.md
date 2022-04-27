@@ -49,7 +49,9 @@ inherits from deme class
 
 ## report results + extra credit
 
+`valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./HW11 challenge.tsv 100 0.2`
 
+copy valgrind-out.txt to root
 
 - [ ] Valgrind
 - [ ] look over obsidian checkoff list 

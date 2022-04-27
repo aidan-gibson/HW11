@@ -6,6 +6,7 @@
 #include "climb_chromosome.h"
 #include "deme.h"
 #include <chrono> //for linux compat
+#include <cassert> //for linux compat
 
 using namespace std;
 
