@@ -80,3 +80,4 @@ Save the graph into “comparison.gif”
 
 Alternating Edges Crossover (AEX)
 
+![](comparison_aex.gif)
