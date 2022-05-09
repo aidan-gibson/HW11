@@ -12,11 +12,13 @@ each thread runs `g` random searches without synchronizing, then tries to update
 
 - [x] Modify `ga_search()` in tsp to use the `nthread` parameter and run multiple demes in parallel, eventually returning the best solution across all demes. 
 
+NUM_ITER = 4,000,000
 
+mut_rate = 0.2
 
-- Which parameters did you choose: num_iter, pop_size, mut_rate, and `nthread` for the best performer.
-- How long is the resulting best tour you found (distance).
-- What is the run time, and how does it compare to a single-threaded run time (use the same parameters to compare, except `nthread=1`).
+pop_size = 1000
+
+Best Performer: 17003.9
 
 ### Output
 
