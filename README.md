@@ -10,30 +10,15 @@ each thread runs `g` random searches without synchronizing, then tries to update
 
 
 
-- [ ] Modify `ga_search()` in tsp to use the `nthread` parameter and run multiple demes in parallel, eventually returning the best solution across all demes. 
+- [x] Modify `ga_search()` in tsp to use the `nthread` parameter and run multiple demes in parallel, eventually returning the best solution across all demes. 
 
-instead of patty i can use any computer with 4+ cores (my laptop). gotta make sure the linux VM i use has multiple core access.
 
-Adapting this code to run a parallel GA should not prove difficult, but debugging it may be. Make sure the results make sense, there are no spurious crashes or errors, and it passes valgrind / address sanitizer. Then, you need to ensure that performance is adequate. To this end, run your code on `patty.reed.edu`, which is a 32-core/64-thread Linux computer. Measure your program with 1, 2, 4, 8, 16, 32, and 64 threads, and plot the total runtime against no. of threads as a graph (using gnuplot / Excel / whatever). You can measure the total runtime of the program as you did in HW5.
 
-Submit this graph in your assignment, as well as a short README that tries to explain the observed performance in the graph. To receive full credit for your assignment, your best performance point in this graph needs to be at least 10x faster than the single-threaded performance (which in turn needs to be similar to the performance you got in part 3, HW11).
-
-When you're done, upload your modified code, along with `shortest.csv` and a README with any special compilation instructions AND the following information:
-
-- The performance graph.
 - Which parameters did you choose: num_iter, pop_size, mut_rate, and `nthread` for the best performer.
 - How long is the resulting best tour you found (distance).
 - What is the run time, and how does it compare to a single-threaded run time (use the same parameters to compare, except `nthread=1`).
 
-As a point of reference, my solution searches 9 million individuals (`NUM_ITER` = 9000000) in about 5s on my old home computer, using the somewhat arbitrary parameters `pop_size` = 1000, `mut_rate` = 0.3 and `nthreads`=14 (my machine has 28 cores). In one of those runs, it came up with what appears to be a close-to-optimal solution (total distance = 5477). Can your GA beat this?
-
-If you want to make your GA work even better, you can synchronize the threads at points of your choosing (say, every G generations) and exchange some "best chromosomes" among them, to spruce up their gene pool. This improvement isn't required for full credit, however.
-
-
-
-- [ ] Submit to github [here](https://moodle.reed.edu/mod/assign/view.php?id=199135) specify branch
-
-
+### Output
 
 1 thread
 
@@ -54,6 +39,10 @@ If you want to make your GA work even better, you can synchronize the threads at
 16 thread
 
 1842.53s user 4.66s system 962% cpu 3:11.83 total
+
+![](Screen Shot 2022-05-08 at 22.57.23.png)
+
+
 
 
 
